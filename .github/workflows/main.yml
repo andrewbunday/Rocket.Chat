@@ -1,0 +1,17 @@
+name: Build Latest
+
+on:  
+  schedule:
+    - cron: "0 22 * * *"
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout upstream
+        uses: actions/checkout@v1
+        with:
+          repository: RocketChat/Rocket.Chat
+          ref: refs/heads/develop
